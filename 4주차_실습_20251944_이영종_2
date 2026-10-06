@@ -1,0 +1,12 @@
+cc = gcc
+target = movie
+objects = main.o film.o director.o
+
+$(target): $(objects)
+	$(cc) -o $(target) $(objects)
+
+$(objects) : movie.h
+
+.PHONY : clean
+clean :
+	rm $(target) $(objects)
